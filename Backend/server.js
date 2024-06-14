@@ -8,8 +8,10 @@ connectdb();
 app.use(bodyParser.json()); // Parses incoming JSON requests
 app.use(express.json()); // Parses incoming JSON requests
 
-//user login route
+//user signup route
 app.use("/usersignup",require("./routes/usersignup"));
+//user login route
+app.use("/userlogin",require("./routes/userlogin"));
 
 
 
