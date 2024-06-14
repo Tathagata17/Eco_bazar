@@ -1,9 +1,10 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const user = require("../models/user");
+const userexist=require("../middleware/userexist")
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", userexist,async(req, res) => {
   const values = req.body;
   const phoneno = values.phone;
   try {
