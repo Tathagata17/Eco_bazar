@@ -12,7 +12,10 @@ app.use(express.json()); // Parses incoming JSON requests
 app.use("/usersignup",require("./routes/usersignup"));
 //user login route
 app.use("/userlogin",require("./routes/userlogin"));
-
+//admin signup
+app.use("/adminsignup",require("./routes/adminsignup"));
+//admin login
+app.use("/adminlogin",require("./routes/adminlogin"));
 
 
 
