@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './components/Home';
+import Signup from './components/Userhandler/Signup';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
       <Route path="" element={<Home/>}/>
+      <Route path="/usersignup" element={<Signup/>}/>
     </Route>
   )
 )
