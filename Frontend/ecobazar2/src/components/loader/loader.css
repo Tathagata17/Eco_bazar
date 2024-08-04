@@ -1,0 +1,30 @@
+/* Loader.css */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top:1rem ;
+    margin-bottom:1rem;
+  }
+  
+  .loader {
+    width: 3rem; /* Adjust size as needed */
+    height: 3rem; /* Adjust size as needed */
+    border: 0.2rem solid #00B207; /* Border color */
+    border-top: 0.2rem solid transparent; /* Transparent border on top */
+    border-radius: 50%; /* Makes the border rounded */
+    animation: spin 800ms linear infinite; /* Spin animation */
+  }
+  
+  /* Keyframes for spin animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

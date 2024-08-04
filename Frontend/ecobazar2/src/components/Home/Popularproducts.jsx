@@ -1,24 +1,15 @@
-import React from 'react'
+import React from "react";
+import Popularproductcard from "../Cards/popularproductscard/Popularproductcard";
 
 function Popularproducts() {
+  const arr =[1,2,3,4,5,6,7,8,9,10];
   return (
-    <div className='mt-2'>
-        <ul className='flex gap-3 ml-32'>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-        </ul>
-        <ul className='flex gap-3 mt-2 ml-32'>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-            <li className='w-48 h-56 bg-red-200'></li>
-        </ul>
+    <div className="mt-2 grid grid-cols-5 gap-3 ml-32 mr-32">
+      {arr.map((item, index) => {return(<Popularproductcard key={index} />)}
+    )}
     </div>
-  )
+  );
 }
 
-export default Popularproducts
+export default Popularproducts;
+

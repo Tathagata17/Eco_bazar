@@ -1,10 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import banner1 from "../assets/Bannar.png";
 import banner2 from "../assets/Bannar2.png";
 import banner3 from "../assets/Bannar3.png";
 import feature from "../assets/Featured.png";
 import Popularcategories from "./Home/Popularcategories";
-import Popularproducts from "./Home/Popularproducts";
+//import Popularproducts from "./Home/Popularproducts";
 import Adfordiscount from "./Cards/Adfordiscount";
 
 import ad1 from "../assets/ad1.png";
@@ -16,7 +16,10 @@ import discountbanner from "../assets/Discount Bannar (1).png";
 import FeaturedProduct from "./Home/FeaturedProduct";
 import Newscards from "./Cards/Newscards";
 import Customertestimonialcard from "./Cards/Customertestimonialcard";
+import { MoveRight } from "lucide-react";
+import Loader from "./loader/Loader";
 
+const Popularproducts = lazy(() => import("./Home/Popularproducts"));
 const obj = {
   text: "BEST DEALS",
   text2: "Sale Of The Month",
@@ -26,9 +29,19 @@ const obj = {
 function Home() {
   return (
     <>
-      <div className="">
+      <div className="mt-24">
         <div className="flex gap-3">
-          <img className="w-1/2 h-1/2 ml-32 mt-4" src={banner1} alt="banner" />
+          <img
+            className="w-1/2 h-1/2 ml-32 mt-4 relative"
+            src={banner1}
+            alt="banner"
+          />
+          <div className="flex gap-1 absolute ml-48 mt-96 bg-green-600 h-8 w-32 px-2 justify-center items-center py-2 text-white font-semibold rounded-xl shadow hover:opacity-80">
+            <div>Shop Now</div>
+            <div>
+            <MoveRight  size={16} />
+            </div>
+          </div>
           <div className="grid gap-1">
             <img className="w-96 h-52 mt-4" src={banner2} alt="banner" />
             <img className="w-96 h-56" src={banner3} alt="banner" />
@@ -51,7 +64,9 @@ function Home() {
         <h2 className="ml-32 text-gray-700 font-semibold text-2xl">
           Popular Items
         </h2>
-        <Popularproducts />
+        <Suspense fallback={<Loader />}>
+          <Popularproducts />
+        </Suspense>
       </div>
       <div className="mt-4 flex gap-1 ml-32 mr-32">
         <Imageoverlay img={ad1} text={obj} />
@@ -90,11 +105,11 @@ function Home() {
       </div>
       <div className="bg-neutral-200 h-96 flex items-center justify-center ">
         <div className="ml-32  mr-32 flex gap-1">
-          <Customertestimonialcard/>
-          <Customertestimonialcard/>
-          <Customertestimonialcard/>
-          </div>
+          <Customertestimonialcard />
+          <Customertestimonialcard />
+          <Customertestimonialcard />
         </div>
+      </div>
     </>
   );
 }

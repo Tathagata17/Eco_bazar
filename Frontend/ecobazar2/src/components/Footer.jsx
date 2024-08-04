@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 function Footer() {
   return (
     <>
-    <div className="bg-gray-900 mt-8 h-96">
+    <div className=" mt-8 h-96 top-96 w-full  font-poppins text-white" style={{backgroundColor:"#1A1A1A"}}>
     <div className='ml-32 mr-32'>
       <ul className='flex gap-28'>
         <li className='mt-8'>
