@@ -1,4 +1,5 @@
 const mongoose =require("mongoose");
+const productmodel=require("./products");
 
 const connectdb=async()=>{
     try
@@ -11,5 +12,8 @@ const connectdb=async()=>{
         console.log(err);
     }
 }
+//const product=
+
+//productmodel.create(product);
 
 module.exports=connectdb;

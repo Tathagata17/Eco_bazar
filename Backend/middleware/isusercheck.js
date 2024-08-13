@@ -4,7 +4,7 @@ const user = require("../models/user");
 
 const isuser = async (req, res, next) => {
   try {
-    if (await user.findOne({ email: req.body.email })) {
+    if (await user.findOne({ email: req.body.Email })) {
         next();
     } else {
       return res.status(400).json({ message: "not a user" });
